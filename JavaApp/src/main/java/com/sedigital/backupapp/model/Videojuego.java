@@ -2,6 +2,10 @@ package com.sedigital.backupapp.model;
 
 import java.sql.Date;
 
+/**
+ * Representa un videojuego en la base de datos.
+ * Contiene información básica como título, precio, clasificación y proveedor.
+ */
 public class Videojuego {
     private int id_videojuego;
     private int unidad;
@@ -13,6 +17,9 @@ public class Videojuego {
     private Date fecha_lanzamiento;
     private int id_proveedor;
 
+    /**
+     * Constructor completo de Videojuego.
+     */
     public Videojuego(int id_videojuego, int unidad, String titulo, String descripcion, float precio_base, int es_digital, String clasificacion, Date fecha_lanzamiento, int id_proveedor) {
         this.id_videojuego = id_videojuego;
         this.unidad = unidad;
@@ -25,77 +32,26 @@ public class Videojuego {
         this.id_proveedor = id_proveedor;
     }
 
-    public int getId_videojuego() {
-        return id_videojuego;
-    }
+    /** Getters y setters */
 
-    public void setId_videojuego(int id_videojuego) {
-        this.id_videojuego = id_videojuego;
-    }
-
-    public int getUnidad() {
-        return unidad;
-    }
-
-    public void setUnidad(int unidad) {
-        this.unidad = unidad;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public float getPrecio_base() {
-        return precio_base;
-    }
-
-    public void setPrecio_base(float precio_base) {
-        this.precio_base = precio_base;
-    }
-
-    public int getEs_digital() {
-        return es_digital;
-    }
-
-    public void setEs_digital(int es_digital) {
-        this.es_digital = es_digital;
-    }
-
-    public String getClasificacion() {
-        return clasificacion;
-    }
-
-    public void setClasificacion(String clasificacion) {
-        this.clasificacion = clasificacion;
-    }
-
-    public Date getFecha_lanzamiento() {
-        return fecha_lanzamiento;
-    }
-
-    public void setFecha_lanzamiento(Date fecha_lanzamiento) {
-        this.fecha_lanzamiento = fecha_lanzamiento;
-    }
-
-    public int getId_proveedor() {
-        return id_proveedor;
-    }
-
-    public void setId_proveedor(int id_proveedor) {
-        this.id_proveedor = id_proveedor;
-    }
+    public int getId_videojuego() { return id_videojuego; }
+    public void setId_videojuego(int id_videojuego) { this.id_videojuego = id_videojuego; }
+    public int getUnidad() { return unidad; }
+    public void setUnidad(int unidad) { this.unidad = unidad; }
+    public String getTitulo() { return titulo; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+    public float getPrecio_base() { return precio_base; }
+    public void setPrecio_base(float precio_base) { this.precio_base = precio_base; }
+    public int getEs_digital() { return es_digital; }
+    public void setEs_digital(int es_digital) { this.es_digital = es_digital; }
+    public String getClasificacion() { return clasificacion; }
+    public void setClasificacion(String clasificacion) { this.clasificacion = clasificacion; }
+    public Date getFecha_lanzamiento() { return fecha_lanzamiento; }
+    public void setFecha_lanzamiento(Date fecha_lanzamiento) { this.fecha_lanzamiento = fecha_lanzamiento; }
+    public int getId_proveedor() { return id_proveedor; }
+    public void setId_proveedor(int id_proveedor) { this.id_proveedor = id_proveedor; }
 
     @Override
     public String toString() {

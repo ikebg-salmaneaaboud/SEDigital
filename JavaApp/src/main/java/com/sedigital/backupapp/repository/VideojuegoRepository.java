@@ -4,21 +4,30 @@ import com.sedigital.backupapp.config.DBConnector;
 import com.sedigital.backupapp.model.Videojuego;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
+/**
+ * Repositorio para acceder a los videojuegos en la base de datos.
+ * Se encarga de obtener todos los registros de la tabla "videojuegos".
+ */
 public class VideojuegoRepository {
+
     private final DBConnector dbConnector;
 
+    /**
+     * Constructor que recibe un conector a la base de datos.
+     */
     public VideojuegoRepository(DBConnector dbConnector) {
         this.dbConnector = dbConnector;
     }
 
+    /**
+     * Obtiene todos los videojuegos de la base de datos.
+     * @return Lista de objetos Videojuego.
+     */
     public List<Videojuego> findAll() {
         List<Videojuego> data = new ArrayList<>();
         String sql = "SELECT * FROM videojuegos";
