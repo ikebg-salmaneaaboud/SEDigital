@@ -1,4 +1,4 @@
-package database;
+package com.sedigital.backupapp.config;
 import java.sql.*;
 
 /**

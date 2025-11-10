@@ -1,4 +1,4 @@
-package xml;
+package com.sedigital.backupapp.xml;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
@@ -6,21 +6,21 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.List;
-import java.util.Map;
 
 /**
- * Clase que exporta datos a archivos XML.
+ * Clase que exporta listas de objetos a archivos XML.
  */
 public class XMLExporter {
 
     /**
-     * Exporta una tabla a un archivo XML.
-     * @param tableName nombre de la tabla.
-     * @param data lista de filas con datos de la tabla.
+     * Exporta una lista de objetos a un archivo XML.
+     * @param tableName nombre de la tabla/elemento raíz.
+     * @param data lista de objetos de cualquier tipo.
      * @param path ruta del archivo XML de salida.
      */
-    public void exportarTabla(String tableName, List<Map<String, Object>> data, String path) {
+    public <T> void exportarTabla(String tableName, List<T> data, String path) {
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -29,13 +29,19 @@ public class XMLExporter {
             Element root = doc.createElement(tableName);
             doc.appendChild(root);
 
-            for (Map<String, Object> row : data) {
+            for (T obj : data) {
                 Element item = doc.createElement("Registro");
-                for (Map.Entry<String, Object> entry : row.entrySet()) {
-                    Element field = doc.createElement(entry.getKey());
-                    field.setTextContent(entry.getValue() != null ? entry.getValue().toString() : "");
-                    item.appendChild(field);
+
+                for (Field field : obj.getClass().getDeclaredFields()) {
+                    field.setAccessible(true);
+                    String name = field.getName();
+                    Object value = field.get(obj);
+
+                    Element fieldElement = doc.createElement(name);
+                    fieldElement.setTextContent(value != null ? value.toString() : "");
+                    item.appendChild(fieldElement);
                 }
+
                 root.appendChild(item);
             }
 
