@@ -4,9 +4,7 @@ plugins {
 
 android {
     namespace = "com.sedigital.gamr"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.sedigital.gamr"
