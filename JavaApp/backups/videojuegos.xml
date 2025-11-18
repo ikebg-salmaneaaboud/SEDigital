@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<videojuegos>
+  <Registro>
+    <id_videojuego>1</id_videojuego>
+    <unidad>1</unidad>
+    <titulo>Red Dead Redemption 2</titulo>
+    <descripcion>Un juego de acción y aventura ambientado en el Salvaje Oeste estadounidense a finales del siglo XIX. Los jugadores asumen el papel de Arthur Morgan, miembro de la banda Van der Linde, mientras lucha por sobrevivir en un mundo que cambia rápidamente. Con un vasto mundo abierto, una narrativa profunda, personajes memorables y un nivel de detalle sin precedentes, el juego ofrece una experiencia cinematográfica inmersiva llena de decisiones morales, tiroteos, exploración y momentos épicos</descripcion>
+    <precio_base>60.0</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2018-10-26</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>2</id_videojuego>
+    <unidad>120</unidad>
+    <titulo>The Legend of Eldoria</titulo>
+    <descripcion>Aventura épica en un mundo abierto lleno de magia y misterio.</descripcion>
+    <precio_base>59.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-05-18</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>3</id_videojuego>
+    <unidad>80</unidad>
+    <titulo>CyberStrike 2099</titulo>
+    <descripcion>Shooter futurista ambientado en una ciudad cibernética con armas avanzadas.</descripcion>
+    <precio_base>49.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2024-03-11</fecha_lanzamiento>
+    <id_proveedor>2</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>4</id_videojuego>
+    <unidad>200</unidad>
+    <titulo>Farm Life Deluxe</titulo>
+    <descripcion>Simulador de vida en el campo con plantaciones, animales y gestión de recursos.</descripcion>
+    <precio_base>39.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>E</clasificacion>
+    <fecha_lanzamiento>2022-10-02</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>5</id_videojuego>
+    <unidad>150</unidad>
+    <titulo>Galaxy Racer X</titulo>
+    <descripcion>Carreras espaciales de alta velocidad con naves personalizables y circuitos intergalácticos.</descripcion>
+    <precio_base>44.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>E10+</clasificacion>
+    <fecha_lanzamiento>2023-09-27</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>6</id_videojuego>
+    <unidad>50</unidad>
+    <titulo>Horror Mansion</titulo>
+    <descripcion>Terror psicológico en una mansión maldita llena de acertijos y criaturas.</descripcion>
+    <precio_base>54.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2024-10-13</fecha_lanzamiento>
+    <id_proveedor>2</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>7</id_videojuego>
+    <unidad>300</unidad>
+    <titulo>Soccer Pro 25</titulo>
+    <descripcion>Juego de fútbol realista con equipos internacionales y ligas personalizables.</descripcion>
+    <precio_base>69.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>E</clasificacion>
+    <fecha_lanzamiento>2025-08-10</fecha_lanzamiento>
+    <id_proveedor>4</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>8</id_videojuego>
+    <unidad>95</unidad>
+    <titulo>Battle Heroes Online</titulo>
+    <descripcion>Juego multijugador de acción con héroes, poderes y arenas PvP.</descripcion>
+    <precio_base>59.49</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-12-05</fecha_lanzamiento>
+    <id_proveedor>5</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>9</id_videojuego>
+    <unidad>130</unidad>
+    <titulo>Mystic Quest Reborn</titulo>
+    <descripcion>RPG de fantasía con sistema de combate táctico y exploración libre.</descripcion>
+    <precio_base>64.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2024-06-21</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>10</id_videojuego>
+    <unidad>180</unidad>
+    <titulo>Street Racers Underground</titulo>
+    <descripcion>Carreras urbanas ilegales con autos personalizables y banda sonora intensa.</descripcion>
+    <precio_base>42.5</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-11-09</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>11</id_videojuego>
+    <unidad>70</unidad>
+    <titulo>Pixel Dungeon 3D</titulo>
+    <descripcion>Juego retro de exploración de mazmorras con estilo pixel art moderno.</descripcion>
+    <precio_base>29.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>E10+</clasificacion>
+    <fecha_lanzamiento>2022-12-22</fecha_lanzamiento>
+    <id_proveedor>4</id_proveedor>
+  </Registro>
+</videojuegos>

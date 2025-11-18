@@ -1,8 +1,10 @@
 package com.sedigital.gamr.adapter;
 
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +28,16 @@ public class VideoGameHolder extends RecyclerView.ViewHolder {
     public void render(VideoGame videoGame) {
         tvVideoGameTitle.setText(videoGame.getTitle());
         tvVideoGameCategory.setText(videoGame.getCategory());
-        tvVideoGamePrice.setText(String.format(String.valueOf(videoGame.getPrice()) + R.string.euro_symbol));
+
+        double price = videoGame.getPrice();
+        tvVideoGamePrice.setText(itemView.getContext().getString(R.string.price_format_euro, price));
+
         ivVideoGameCover.setImageResource(videoGame.getCover());
+        ivVideoGameCover.setOnClickListener(view ->
+                Toast.makeText(itemView.getContext(),
+                                "Juego: " + videoGame.getTitle(),
+                                Toast.LENGTH_SHORT)
+                        .show()
+        );
     }
 }
