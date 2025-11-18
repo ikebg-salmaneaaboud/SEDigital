@@ -10,10 +10,10 @@ import com.sedigital.gamr.R;
 import com.sedigital.gamr.VideoGame;
 
 public class VideoGameHolder extends RecyclerView.ViewHolder {
-    private TextView tvVideoGameTitle;
-    private TextView tvVideoGameCategory;
-    private TextView tvVideoGamePrice;
-    private ImageView ivVideoGameCover;
+    private final TextView tvVideoGameTitle;
+    private final TextView tvVideoGameCategory;
+    private final TextView tvVideoGamePrice;
+    private final ImageView ivVideoGameCover;
 
     public VideoGameHolder(View view) {
         super(view);
@@ -26,7 +26,7 @@ public class VideoGameHolder extends RecyclerView.ViewHolder {
     public void render(VideoGame videoGame) {
         tvVideoGameTitle.setText(videoGame.getTitle());
         tvVideoGameCategory.setText(videoGame.getCategory());
-        tvVideoGamePrice.setText(String.valueOf(videoGame.getPrice()) + "€");
+        tvVideoGamePrice.setText(String.format(String.valueOf(videoGame.getPrice()) + R.string.euro_symbol));
         ivVideoGameCover.setImageResource(videoGame.getCover());
     }
 }
