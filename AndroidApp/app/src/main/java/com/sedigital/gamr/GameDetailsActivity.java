@@ -1,6 +1,8 @@
 package com.sedigital.gamr;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,18 +13,36 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import java.util.ArrayList;
 
 public class GameDetailsActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_details);
 
-        ImageSlider imageSlider = findViewById(R.id.imageSlider);
+        ImageView btnReturn = findViewById(R.id.header_return_icon);
+
+        btnReturn.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
+
+
+        TextView tvTitle = findViewById(R.id.tvGameTitle);
+        TextView tvDeveloper = findViewById(R.id.tvDeveloper);
+        TextView tvRating = findViewById(R.id.tvRating);
+        TextView tvDescription = findViewById(R.id.tvGameDescription);
+        com.denzcoskun.imageslider.ImageSlider imageSlider = findViewById(R.id.imageSlider);
+
+        tvTitle.setText(getIntent().getStringExtra("title"));
+        tvDeveloper.setText(getIntent().getStringExtra("developer"));
+        tvRating.setText(String.valueOf(getIntent().getDoubleExtra("rating", 0.0)));
+        tvDescription.setText(getIntent().getStringExtra("description"));
+
+        ArrayList<Integer> images = getIntent().getIntegerArrayListExtra("images");
         ArrayList<SlideModel> slideModels = new ArrayList<>();
-
-        slideModels.add(new SlideModel(R.drawable.rdr_carousel_1, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.rdr_carousel_2, ScaleTypes.FIT));
-        slideModels.add(new SlideModel(R.drawable.rdr_carousel_3, ScaleTypes.FIT));
-
+        if (images != null) {
+            for (int img : images) {
+                slideModels.add(new SlideModel(img, ScaleTypes.FIT));
+            }
+        }
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
+
 }

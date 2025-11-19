@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/main_header"
-        layout="@layout/main_header"
+        layout="@layout/header_with_return"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +69,7 @@
                         android:textColor="@color/text_primary"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:text="Red Dead Redemption II" />
+                        tools:text="Red Dead Redemption II" />
 
                     <TextView
                         android:id="@+id/tvDeveloper"
@@ -78,7 +78,7 @@
                         android:fontFamily="@font/ropa_sans"
                         android:textColor="@color/text_secondary"
                         android:textSize="14sp"
-                        android:text="ROCKSTAR GAMES" />
+                        tools:text="ROCKSTAR GAMES" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -103,7 +103,7 @@
                         android:textStyle="bold"
                         android:textColor="@color/text_primary"
                         android:fontFamily="@font/ropa_sans"
-                        android:text="4.8" />
+                        tools:text="4.8" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -116,7 +116,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/text_secondary"
                 android:fontFamily="@font/ropa_sans"
-                android:text="América, 1899. El ocaso del Salvaje Oeste ha comenzado. Tras un  desastroso atraco fallido en la ciudad de Blackwater, Arthur Morgan y la banda de Van der Linde se ven obligados a huir. Con agentes federales y los mejores cazarrecompensas de la nación pisándoles los talones, la  banda deberá atracar, robar y luchar para sobrevivir en su camino por el escabroso territorio del corazón de América. Mientras las divisiones  internas aumentan y amenazan con separarlos a todos, Arthur deberá  elegir entre sus propios ideales y la lealtad a la banda que lo vio  crecer." />
+                tools:text="América, 1899. El ocaso del Salvaje Oeste ha comenzado. Tras un  desastroso atraco fallido en la ciudad de Blackwater, Arthur Morgan y la banda de Van der Linde se ven obligados a huir. Con agentes federales y los mejores cazarrecompensas de la nación pisándoles los talones, la  banda deberá atracar, robar y luchar para sobrevivir en su camino por el escabroso territorio del corazón de América. Mientras las divisiones  internas aumentan y amenazan con separarlos a todos, Arthur deberá  elegir entre sus propios ideales y la lealtad a la banda que lo vio  crecer." />
 
         </LinearLayout>
     </ScrollView>
