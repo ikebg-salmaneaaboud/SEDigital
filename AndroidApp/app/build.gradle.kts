@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("com.github.bumptech.glide:glide:5.0.5")
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     testImplementation(libs.junit)

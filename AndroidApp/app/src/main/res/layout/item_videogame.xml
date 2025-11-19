@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
 
-    <!-- Imagen del juego -->
     <ImageView
         android:id="@+id/ivVideoGame"
         android:layout_width="0dp"
@@ -18,7 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rdr2" />
 
-    <!-- Categoría del juego -->
     <TextView
         android:id="@+id/tvVideoGameCategory"
         android:layout_width="0dp"
@@ -33,7 +31,6 @@
         android:layout_marginTop="4dp"
         tools:text="Acción" />
 
-    <!-- Título del juego -->
     <TextView
         android:id="@+id/tvVideoGameTitle"
         android:layout_width="0dp"
@@ -51,7 +48,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvVideoGameCategory"
         tools:text="Red Dead Redemption II" />
 
-    <!-- Precio del juego -->
     <TextView
         android:id="@+id/tvVideoGamePrice"
         android:layout_width="0dp"

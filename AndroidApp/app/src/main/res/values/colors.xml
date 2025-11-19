@@ -5,4 +5,5 @@
     <color name="primaryOrange">#FFFBA820</color>
     <color name="darkGrey">#26262c </color>
     <color name="textWhite">#38383b</color>
+    <color name="button_secondary_stroke">#5A5D80</color>
 </resources>
