@@ -20,15 +20,13 @@ public class GameDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_details);
 
         ImageView btnReturn = findViewById(R.id.header_return_icon);
-
         btnReturn.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
-
 
         TextView tvTitle = findViewById(R.id.tvGameTitle);
         TextView tvDeveloper = findViewById(R.id.tvDeveloper);
         TextView tvRating = findViewById(R.id.tvRating);
         TextView tvDescription = findViewById(R.id.tvGameDescription);
-        com.denzcoskun.imageslider.ImageSlider imageSlider = findViewById(R.id.imageSlider);
+        ImageSlider imageSlider = findViewById(R.id.imageSlider);
 
         tvTitle.setText(getIntent().getStringExtra("title"));
         tvDeveloper.setText(getIntent().getStringExtra("developer"));
