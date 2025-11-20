@@ -1,11 +1,12 @@
-package com.sedigital.gamr;
+package com.sedigital.gamr.ui.catalog;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sedigital.gamr.adapter.VideoGameAdapter;
+import com.sedigital.gamr.R;
+import com.sedigital.gamr.data.mock.VideoGameProvider;
 
 public class CatalogActivity extends AppCompatActivity {
 
@@ -22,6 +23,6 @@ public class CatalogActivity extends AppCompatActivity {
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerGames);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        recyclerView.setAdapter(new VideoGameAdapter(videoGameProvider.getVideoGames()));
+        recyclerView.setAdapter(new CatalogGameAdapter(videoGameProvider.getVideoGames()));
     }
 }

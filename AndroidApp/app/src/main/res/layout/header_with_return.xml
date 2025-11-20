@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:paddingVertical="24dp"
+    android:paddingHorizontal="10dp"
+    >
 
-    <!-- Icono del Carrito de Compras -->
     <ImageView
         android:id="@+id/header_return_icon"
         android:layout_width="24dp"
@@ -19,7 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_primary" />
 
-    <!-- Logo de la App -->
     <ImageView
         android:id="@+id/header_logo"
         android:layout_width="97dp"
@@ -33,7 +32,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_primary" />
 
-    <!-- Icono de Búsqueda -->
     <ImageView
         android:id="@+id/header_search_icon"
         android:layout_width="24dp"

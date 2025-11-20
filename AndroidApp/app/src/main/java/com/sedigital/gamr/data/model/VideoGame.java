@@ -1,4 +1,4 @@
-package com.sedigital.gamr;
+package com.sedigital.gamr.data.model;
 
 import java.util.ArrayList;
 

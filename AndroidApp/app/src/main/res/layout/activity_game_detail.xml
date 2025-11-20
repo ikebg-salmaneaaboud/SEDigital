@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/vertical_gradient"
-    tools:context=".GameDetailsActivity">
+    tools:context=".ui.gamedetail.GameDetailActivity">
 
     <include
         android:id="@+id/main_header"

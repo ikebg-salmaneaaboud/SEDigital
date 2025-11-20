@@ -1,25 +1,23 @@
-package com.sedigital.gamr.adapter;
+package com.sedigital.gamr.ui.catalog;
 
 import android.content.Intent;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sedigital.gamr.GameDetailsActivity;
+import com.sedigital.gamr.ui.gamedetail.GameDetailActivity;
 import com.sedigital.gamr.R;
-import com.sedigital.gamr.VideoGame;
+import com.sedigital.gamr.data.model.VideoGame;
 
-public class VideoGameHolder extends RecyclerView.ViewHolder {
+public class CatalogGameViewHolder extends RecyclerView.ViewHolder {
     private final TextView tvVideoGameTitle;
     private final TextView tvVideoGameCategory;
     private final TextView tvVideoGamePrice;
     private final ImageView ivVideoGameCover;
 
-    public VideoGameHolder(View view) {
+    public CatalogGameViewHolder(View view) {
         super(view);
         tvVideoGameTitle = view.findViewById(R.id.tvVideoGameTitle);
         tvVideoGameCategory = view.findViewById(R.id.tvVideoGameCategory);
@@ -37,7 +35,7 @@ public class VideoGameHolder extends RecyclerView.ViewHolder {
         ivVideoGameCover.setImageResource(videoGame.getCover());
 
         itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(itemView.getContext(), GameDetailsActivity.class);
+            Intent intent = new Intent(itemView.getContext(), GameDetailActivity.class);
             intent.putExtra("title", videoGame.getTitle());
             intent.putExtra("category", videoGame.getCategory());
             intent.putExtra("price", videoGame.getPrice());

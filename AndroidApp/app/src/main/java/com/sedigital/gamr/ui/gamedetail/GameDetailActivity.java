@@ -1,4 +1,4 @@
-package com.sedigital.gamr;
+package com.sedigital.gamr.ui.gamedetail;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -9,15 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.sedigital.gamr.R;
 
 import java.util.ArrayList;
 
-public class GameDetailsActivity extends AppCompatActivity {
+public class GameDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_details);
+        setContentView(R.layout.activity_game_detail);
 
         ImageView btnReturn = findViewById(R.id.header_return_icon);
         btnReturn.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
