@@ -6,20 +6,31 @@ import com.sedigital.backupapp.repository.ProveedorRepository;
 import com.sedigital.backupapp.repository.VideojuegoRepository;
 import com.sedigital.backupapp.service.ConsultaService;
 import com.sedigital.backupapp.service.ExportService;
-import com.sedigital.backupapp.ui.MenuUI;
+import com.sedigital.backupapp.ui.MainMenu;
 import com.sedigital.backupapp.xml.XMLExporter;
 
 /**
- * Clase principal que ejecuta el programa de exportación de tablas a XML.
+ * Punto de entrada de la aplicación.
+ * <p>
+ * Inicializa la conexión a la base de datos, crea los repositorios necesarios,
+ * los servicios de consulta y exportación, y lanza la interfaz de menú para
+ * interactuar con el sistema.
  */
 public class Main {
 
     /**
-     * Método principal.
-     * Crea los repositorios, el exportador y el servicio de exportación,
-     * y ejecuta la exportación de todas las tablas al directorio "./backups".
+     * Método principal de ejecución de la aplicación.
+     * <p>
+     * Realiza los siguientes pasos:
+     * <ul>
+     *   <li>Inicializa la conexión a la base de datos mediante {@link DBConnector}.</li>
+     *   <li>Crea los repositorios de videojuegos, proveedores y plataformas.</li>
+     *   <li>Instancia el servicio de consultas {@link ConsultaService}.</li>
+     *   <li>Configura el exportador XML y el servicio de exportación {@link ExportService}.</li>
+     *   <li>Inicia la interfaz textual del menú principal {@link MainMenu}.</li>
+     * </ul>
      *
-     * @param args Argumentos de línea de comandos (no se usan).
+     * @param args Argumentos de línea de comandos (no utilizados).
      */
     public static void main(String[] args) {
         DBConnector db = new DBConnector();
@@ -32,7 +43,7 @@ public class Main {
         XMLExporter xmlExporter = new XMLExporter();
         ExportService exportService = new ExportService(xmlExporter, vRepo, pRepo, plRepo);
 
-        MenuUI menu = new MenuUI(consultaService, exportService);
-        menu.mostrarMenu();
+        MainMenu menu = new MainMenu(consultaService, exportService);
+        menu.iniciar();
     }
 }
