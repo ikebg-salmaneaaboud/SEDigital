@@ -4,7 +4,9 @@ import com.sedigital.backupapp.config.DBConnector;
 import com.sedigital.backupapp.repository.PlataformaRepository;
 import com.sedigital.backupapp.repository.ProveedorRepository;
 import com.sedigital.backupapp.repository.VideojuegoRepository;
+import com.sedigital.backupapp.service.ConsultaService;
 import com.sedigital.backupapp.service.ExportService;
+import com.sedigital.backupapp.ui.MenuUI;
 import com.sedigital.backupapp.xml.XMLExporter;
 
 /**
@@ -20,21 +22,17 @@ public class Main {
      * @param args Argumentos de línea de comandos (no se usan).
      */
     public static void main(String[] args) {
-        DBConnector dbConnector = new DBConnector();
+        DBConnector db = new DBConnector();
 
-        VideojuegoRepository videojuegoRepo = new VideojuegoRepository(dbConnector);
-        ProveedorRepository proveedorRepo = new ProveedorRepository(dbConnector);
-        PlataformaRepository plataformaRepo = new PlataformaRepository(dbConnector);
+        VideojuegoRepository vRepo = new VideojuegoRepository(db);
+        ProveedorRepository pRepo = new ProveedorRepository(db);
+        PlataformaRepository plRepo = new PlataformaRepository(db);
 
+        ConsultaService consultaService = new ConsultaService(vRepo, pRepo, plRepo);
         XMLExporter xmlExporter = new XMLExporter();
+        ExportService exportService = new ExportService(xmlExporter, vRepo, pRepo, plRepo);
 
-        ExportService exportService = new ExportService(xmlExporter,
-                videojuegoRepo,
-                proveedorRepo,
-                plataformaRepo);
-
-        exportService.exportarTodos("./backups");
-
-        System.out.println("Exportación completada. Archivos generados en ./backups");
+        MenuUI menu = new MenuUI(consultaService, exportService);
+        menu.mostrarMenu();
     }
 }

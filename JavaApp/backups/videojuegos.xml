@@ -4,7 +4,7 @@
     <id_videojuego>1</id_videojuego>
     <unidad>1</unidad>
     <titulo>Red Dead Redemption 2</titulo>
-    <descripcion>Un juego de acción y aventura ambientado en el Salvaje Oeste estadounidense a finales del siglo XIX. Los jugadores asumen el papel de Arthur Morgan, miembro de la banda Van der Linde, mientras lucha por sobrevivir en un mundo que cambia rápidamente. Con un vasto mundo abierto, una narrativa profunda, personajes memorables y un nivel de detalle sin precedentes, el juego ofrece una experiencia cinematográfica inmersiva llena de decisiones morales, tiroteos, exploración y momentos épicos</descripcion>
+    <descripcion>Un juego de acción y aventura ambientado en el Salvaje Oeste estadounidense a finales del siglo XIX.</descripcion>
     <precio_base>60.0</precio_base>
     <es_digital>0</es_digital>
     <clasificacion>M</clasificacion>
@@ -112,13 +112,222 @@
   </Registro>
   <Registro>
     <id_videojuego>11</id_videojuego>
-    <unidad>70</unidad>
-    <titulo>Pixel Dungeon 3D</titulo>
-    <descripcion>Juego retro de exploración de mazmorras con estilo pixel art moderno.</descripcion>
+    <unidad>110</unidad>
+    <titulo>Dragonfall Chronicles</titulo>
+    <descripcion>Aventura RPG en un continente dividido por dragones ancestrales y guerras mágicas.</descripcion>
+    <precio_base>59.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2024-07-18</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>12</id_videojuego>
+    <unidad>140</unidad>
+    <titulo>Neon Drift 3000</titulo>
+    <descripcion>Carreras futuristas con autos antigravitatorios y pistas iluminadas con neón.</descripcion>
+    <precio_base>49.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>E</clasificacion>
+    <fecha_lanzamiento>2023-11-05</fecha_lanzamiento>
+    <id_proveedor>2</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>13</id_videojuego>
+    <unidad>60</unidad>
+    <titulo>Shadowline Ops</titulo>
+    <descripcion>Shooter táctico de infiltración con misiones sigilosas en ciudades hostiles.</descripcion>
+    <precio_base>39.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2024-03-21</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>14</id_videojuego>
+    <unidad>175</unidad>
+    <titulo>Kingdom Builders</titulo>
+    <descripcion>Simulador de construcción y gestión de un reino medieval en expansión.</descripcion>
+    <precio_base>44.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>E10+</clasificacion>
+    <fecha_lanzamiento>2023-08-14</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>15</id_videojuego>
+    <unidad>90</unidad>
+    <titulo>Starforge Legends</titulo>
+    <descripcion>Acción y exploración espacial con combate entre naves y misterios galácticos.</descripcion>
+    <precio_base>59.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2024-01-29</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>16</id_videojuego>
+    <unidad>45</unidad>
+    <titulo>Nightmare Circus</titulo>
+    <descripcion>Terror surrealista ambientado en un circo abandonado lleno de ilusiones macabras.</descripcion>
     <precio_base>29.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2023-10-31</fecha_lanzamiento>
+    <id_proveedor>4</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>17</id_videojuego>
+    <unidad>220</unidad>
+    <titulo>Ultimate Basket League 25</titulo>
+    <descripcion>Juego de baloncesto realista con ligas internacionales y modo carrera.</descripcion>
+    <precio_base>69.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>E</clasificacion>
+    <fecha_lanzamiento>2024-09-10</fecha_lanzamiento>
+    <id_proveedor>2</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>18</id_videojuego>
+    <unidad>85</unidad>
+    <titulo>Mage Arena Online</titulo>
+    <descripcion>MOBA mágico con hechiceros, criaturas invocadas y arenas dinámicas.</descripcion>
+    <precio_base>0.0</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-12-06</fecha_lanzamiento>
+    <id_proveedor>5</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>19</id_videojuego>
+    <unidad>160</unidad>
+    <titulo>Viking Saga: Blood and Honor</titulo>
+    <descripcion>RPG de acción ambientado en la era vikinga con saqueos, raids y construcción de asentamientos.</descripcion>
+    <precio_base>54.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2024-04-28</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>20</id_videojuego>
+    <unidad>100</unidad>
+    <titulo>Turbo Drift Outlaws</titulo>
+    <descripcion>Carreras de derrape extremo con autos modificados y circuitos urbanos peligrosos.</descripcion>
+    <precio_base>39.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-09-19</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>21</id_videojuego>
+    <unidad>140</unidad>
+    <titulo>ChronoBlade Exodus</titulo>
+    <descripcion>RPG de acción donde los jugadores viajan entre líneas temporales para evitar el colapso del multiverso.</descripcion>
+    <precio_base>59.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2024-05-22</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>22</id_videojuego>
+    <unidad>95</unidad>
+    <titulo>Steel Guardian Zero</titulo>
+    <descripcion>Shooter futurista con mechas personalizables y batallas masivas en terrenos urbanos.</descripcion>
+    <precio_base>49.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2023-11-15</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>23</id_videojuego>
+    <unidad>180</unidad>
+    <titulo>Fantasy Valley Sim</titulo>
+    <descripcion>Simulador de vida en un valle mágico con criaturas, cultivos y construcción de aldeas.</descripcion>
+    <precio_base>39.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>E</clasificacion>
+    <fecha_lanzamiento>2024-02-10</fecha_lanzamiento>
+    <id_proveedor>4</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>24</id_videojuego>
+    <unidad>70</unidad>
+    <titulo>Darkwater Abyss</titulo>
+    <descripcion>Juego de terror submarino ambientado en una estación abandonada bajo el océano.</descripcion>
+    <precio_base>34.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2023-10-05</fecha_lanzamiento>
+    <id_proveedor>5</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>25</id_videojuego>
+    <unidad>200</unidad>
+    <titulo>Moto Racer XTreme</titulo>
+    <descripcion>Carreras extremas con motocicletas personalizables y pistas llenas de obstáculos.</descripcion>
+    <precio_base>44.99</precio_base>
     <es_digital>1</es_digital>
     <clasificacion>E10+</clasificacion>
-    <fecha_lanzamiento>2022-12-22</fecha_lanzamiento>
+    <fecha_lanzamiento>2024-06-03</fecha_lanzamiento>
+    <id_proveedor>2</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>26</id_videojuego>
+    <unidad>160</unidad>
+    <titulo>Empire of Sands</titulo>
+    <descripcion>Estrategia en tiempo real ambientada en reinos desérticos con construcción, combates y diplomacia.</descripcion>
+    <precio_base>59.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2024-03-18</fecha_lanzamiento>
+    <id_proveedor>1</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>27</id_videojuego>
+    <unidad>85</unidad>
+    <titulo>Cyber Arena Royale</titulo>
+    <descripcion>Battle royale futurista con armas de energía y arenas dinámicas que cambian en tiempo real.</descripcion>
+    <precio_base>0.0</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-12-29</fecha_lanzamiento>
+    <id_proveedor>5</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>28</id_videojuego>
+    <unidad>55</unidad>
+    <titulo>Haunted Forest Tales</titulo>
+    <descripcion>Aventura narrativa de terror en un bosque embrujado con decisiones que alteran la historia.</descripcion>
+    <precio_base>29.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>M</clasificacion>
+    <fecha_lanzamiento>2023-09-25</fecha_lanzamiento>
     <id_proveedor>4</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>29</id_videojuego>
+    <unidad>130</unidad>
+    <titulo>Star Patrol Omega</titulo>
+    <descripcion>Juego de exploración espacial con gestión de nave, combate y descubrimiento de sistemas lejanos.</descripcion>
+    <precio_base>54.99</precio_base>
+    <es_digital>1</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2024-07-01</fecha_lanzamiento>
+    <id_proveedor>3</id_proveedor>
+  </Registro>
+  <Registro>
+    <id_videojuego>30</id_videojuego>
+    <unidad>175</unidad>
+    <titulo>Urban Fighters Legacy</titulo>
+    <descripcion>Beat’em up urbano con campañas cooperativas, jefes épicos y habilidades mejorables.</descripcion>
+    <precio_base>49.99</precio_base>
+    <es_digital>0</es_digital>
+    <clasificacion>T</clasificacion>
+    <fecha_lanzamiento>2023-11-11</fecha_lanzamiento>
+    <id_proveedor>2</id_proveedor>
   </Registro>
 </videojuegos>

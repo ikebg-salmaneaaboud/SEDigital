@@ -1,51 +1,44 @@
 package com.sedigital.backupapp.config;
-import java.sql.*;
 
-/**
- * Clase que maneja la conexión a la base de datos MySQL.
- */
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
 public class DBConnector {
-    private final String DB_NAME = "tienda_videojuegos";
-    private final String USER = "root";
-    private final String PASS = "2dam3";
-    private final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_NAME;
-    private Connection connection;
 
-    /**
-     * Constructor que establece la conexión automáticamente.
-     */
+    private String dbName;
+    private String user;
+    private String pass;
+    private String dbUrl;
+
     public DBConnector() {
-        connect();
+        cargarConfiguracion();
     }
 
-    /**
-     * Establece la conexión a la base de datos.
-     */
-    public void connect() {
+    private void cargarConfiguracion() {
+        Properties props = new Properties();
+        try (FileInputStream fis = new FileInputStream("config.properties")) {
+            props.load(fis);
+            this.dbName = props.getProperty("db.name");
+            this.user = props.getProperty("db.user");
+            this.pass = props.getProperty("db.pass");
+            this.dbUrl = props.getProperty("db.url");
+        } catch (IOException e) {
+            System.out.println("Error cargando archivo config.properties");
+            e.printStackTrace();
+        }
+    }
+
+    public Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.connection = DriverManager.getConnection(DB_URL, USER, PASS);
-        } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC Driver no encontrado.");
+            e.printStackTrace();
         }
-    }
-
-    /**
-     * Cierra la conexión a la base de datos.
-     */
-    public void disconnect() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    /**
-     * Obtiene la conexión activa.
-     * @return instancia de Connection.
-     */
-    public Connection getConnection() {
-        return connection;
+        return DriverManager.getConnection(dbUrl, user, pass);
     }
 }
