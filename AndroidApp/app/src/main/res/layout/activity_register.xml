@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.LoginActivity">
+    tools:context=".ui.auth.RegisterActivity">
 
-    <!-- Fondo original (imagen) -->
+    <!-- Fondo -->
     <ImageView
         android:id="@+id/bgImage"
         android:layout_width="match_parent"
@@ -13,6 +13,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg_1"/>
 
+    <!-- Contenido -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,10 +28,10 @@
 
             <!-- Título -->
             <TextView
-                android:id="@+id/login_title"
+                android:id="@+id/register_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Iniciar sesión"
+                android:text="Regístrate"
                 android:textColor="@color/text_primary"
                 android:textSize="32sp"
                 android:textStyle="bold"
@@ -38,41 +39,59 @@
 
             <!-- Subtítulo -->
             <TextView
-                android:id="@+id/login_subtitle"
+                android:id="@+id/register_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¡Bienvenido de nuevo!"
+                android:text="No te pierdas ninguna novedad"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp"/>
 
             <!-- Email -->
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etRegisterEmail"
                 style="@style/InputField"
                 android:layout_width="match_parent"
                 android:layout_marginTop="32dp"
                 android:hint="Correo electrónico"
                 android:inputType="textEmailAddress"/>
 
+            <!-- Confirmar Email -->
+            <EditText
+                android:id="@+id/etRegisterEmailConfirm"
+                style="@style/InputField"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:hint="Confirmar correo electrónico"
+                android:inputType="textEmailAddress"/>
+
             <!-- Password -->
             <EditText
-                android:id="@+id/etPassword"
+                android:id="@+id/etRegisterPassword"
                 style="@style/InputField"
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"/>
 
-            <!-- Botón Entrar -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnConfirmLogin"
-                style="@style/GameButton.Orange"
-                android:layout_marginTop="28dp"
+            <!-- Confirm Password -->
+            <EditText
+                android:id="@+id/etRegisterPasswordConfirm"
+                style="@style/InputField"
                 android:layout_width="match_parent"
-                android:text="Entrar" />
+                android:layout_marginTop="16dp"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"/>
 
-            <!-- Nuevo usuario + Registrarse -->
+            <!-- Botón crear cuenta -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
+                style="@style/GameButton.Orange"
+                android:layout_width="match_parent"
+                android:layout_marginTop="28dp"
+                android:text="Crear cuenta" />
+
+            <!-- Enlace para iniciar sesión -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,24 +100,25 @@
                 android:layout_marginTop="16dp">
 
                 <TextView
-                    android:id="@+id/tvNewUser"
+                    android:id="@+id/alreadyUserText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿Nuevo usuario?"
+                    android:text="¿Ya tienes cuenta?"
                     android:textSize="14sp"
                     android:textColor="@color/text_primary" />
 
                 <TextView
-                    android:id="@+id/tvRegister"
+                    android:id="@+id/loginLink"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" Registrarse"
+                    android:text=" Iniciar sesión"
                     android:textSize="14sp"
                     android:textColor="@color/text_orange"
                     android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </FrameLayout>

@@ -3,6 +3,7 @@ package com.sedigital.gamr.ui.auth;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
     private MaterialButton btnConfirmLogin;
+    private TextView registerLink;
     private List<User> users;
 
     @Override
@@ -29,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnConfirmLogin = findViewById(R.id.btnConfirmLogin);
+        registerLink = findViewById(R.id.tvRegister);
 
         users = FakeRepository.getInstance().getUsers();
 
@@ -57,6 +60,10 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        registerLink.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
     }
 }

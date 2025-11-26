@@ -4,75 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
-    >
+    tools:context=".ui.MainActivity">
 
+    <!-- Fondo general -->
     <ImageView
+        android:id="@+id/bgImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/landing_bg" />
 
+    <!-- Contenido -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:fitsSystemWindows="true"
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/landing_bg">
+        android:padding="24dp">
 
+        <!-- Logo -->
         <ImageView
             android:id="@+id/ivLogo"
             android:layout_width="229dp"
             android:layout_height="104dp"
-            android:layout_marginStart="91dp"
-            android:layout_marginTop="93dp"
-            android:layout_marginEnd="91dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/subtitle_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/logo"
+            android:adjustViewBounds="true"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="93dp"/>
 
+        <!-- Subtítulo -->
         <TextView
             android:id="@+id/subtitle_text"
-            android:layout_width="142dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="134dp"
-            android:layout_marginEnd="135dp"
-            android:layout_marginBottom="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="Todo lo que necesitas para jugar, está aquí."
             android:textAlignment="center"
             android:textColor="#B6B6B6"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/register_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
 
+        <!-- Botón Registrarse idéntico al original -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/register_button"
+            android:id="@+id/bRegister"
             style="@style/GameButton.Orange"
-            android:layout_marginTop="36dp"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
             android:text="Registrarse"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitle_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/subtitle_text" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Botón Iniciar sesión igual al original -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/login_button"
+            android:id="@+id/bLogin"
             style="@style/GameButton.Black"
-            android:layout_marginTop="28dp"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
             android:text="Iniciar sesión"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@id/bRegister"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/register_button" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
-
-

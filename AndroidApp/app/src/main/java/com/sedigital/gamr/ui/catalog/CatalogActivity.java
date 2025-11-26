@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sedigital.gamr.R;
 import com.sedigital.gamr.data.mock.VideoGameProvider;
+import com.sedigital.gamr.ui.BaseActivity;
 
-public class CatalogActivity extends AppCompatActivity {
+public class CatalogActivity extends BaseActivity {
 
     private VideoGameProvider videoGameProvider;
 
@@ -17,6 +18,7 @@ public class CatalogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
         videoGameProvider = new VideoGameProvider();
+        setupBottomNav(R.id.games);
         initRecyclerView();
     }
 

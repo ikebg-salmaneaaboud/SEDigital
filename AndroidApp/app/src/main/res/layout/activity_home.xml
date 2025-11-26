@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/vertical_gradient"
-    tools:context=".ui.catalog.CatalogActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <include
         android:id="@+id/main_header"
@@ -17,14 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerGames"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/tvOnSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juegos en venta"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:fontFamily="@font/ropa_sans"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_header" />
+        app:layout_constraintTop_toBottomOf="@id/main_header"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"/>
 
     <include
         layout="@layout/view_bottom_nav"
