@@ -21,10 +21,11 @@
         android:id="@+id/recyclerGames"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_header" />
+        app:layout_constraintTop_toBottomOf="@+id/main_header"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
+
 
     <include
         layout="@layout/view_bottom_nav"
@@ -33,5 +34,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

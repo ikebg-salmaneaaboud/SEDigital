@@ -32,6 +32,9 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- El contenido dinámico como el título, desarrollador, rating y descripción
+                 está correctamente usando tools:text, por lo que no se necesita cambiar. -->
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -92,7 +95,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:src="@drawable/star"
-                        app:tint="@color/primaryOrange" />
+                        app:tint="@color/text_orange" />
 
                     <TextView
                         android:id="@+id/tvRating"
@@ -116,7 +119,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/text_secondary"
                 android:fontFamily="@font/ropa_sans"
-                tools:text="América, 1899. El ocaso del Salvaje Oeste ha comenzado. Tras un  desastroso atraco fallido en la ciudad de Blackwater, Arthur Morgan y la banda de Van der Linde se ven obligados a huir. Con agentes federales y los mejores cazarrecompensas de la nación pisándoles los talones, la  banda deberá atracar, robar y luchar para sobrevivir en su camino por el escabroso territorio del corazón de América. Mientras las divisiones  internas aumentan y amenazan con separarlos a todos, Arthur deberá  elegir entre sus propios ideales y la lealtad a la banda que lo vio  crecer." />
+                tools:text="América, 1899. El ocaso del Salvaje Oeste ha comenzado..." />
 
         </LinearLayout>
     </ScrollView>
@@ -132,32 +135,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddToCart"
+            style="@style/GameButton.Orange"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:text="Agregar al carrito"
+            android:text="@string/add_to_cart_button"
             android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textColor="@color/text_primary"
-            android:background="@drawable/bg_button_secondary"
-            android:fontFamily="@font/ropa_sans" />
+            android:textSize="16sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBuy"
+            style="@style/GameButton.Black"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:text="Comprar"
+            android:text="@string/buy_now_button"
             android:textAllCaps="false"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/app_background"
-            android:background="@drawable/bg_button_primary"
-            android:fontFamily="@font/ropa_sans" />
+            android:textSize="16sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

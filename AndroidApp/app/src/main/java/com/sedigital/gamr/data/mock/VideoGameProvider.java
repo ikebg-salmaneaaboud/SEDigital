@@ -89,6 +89,46 @@ public class VideoGameProvider {
                 cyberpunkImages
         ));
 
+        //FIFA 23
+        ArrayList<Integer> fifa23Images = new ArrayList<>();
+        fifa23Images.add(R.drawable.fifa23_carousel_3);
+        fifa23Images.add(R.drawable.fifa23_carousel_2);
+        fifa23Images.add(R.drawable.fifa23_carousel_1);
+
+        videoGames.add(new VideoGame(
+                "FIFA 23",
+                "Deportes / Simulación",
+                59.99,
+                "EA SPORTS",
+                4.3,
+                "El Juego de todos al campo con los torneos de la Copa Mundial de la FIFA™ masculina y femenina, " +
+                        "la inclusión de equipos de clubes femeninos por primera vez y funciones de juego cruzado." +
+                        "Experimenta una autenticidad inigualable con más de 19,000 jugadores, 700 equipos y 30 ligas.",
+                R.drawable.fifa23,
+                fifa23Images
+        ));
+
+        //GTA 5
+        ArrayList<Integer> gta5Images = new ArrayList<>();
+        gta5Images.add(R.drawable.gta5_carousel_1);
+        gta5Images.add(R.drawable.gta5_carousel_5);
+        gta5Images.add(R.drawable.gta5_carousel_2);
+        gta5Images.add(R.drawable.gta5_carousel_3);
+        gta5Images.add(R.drawable.gta5_carousel_4);
+
+        videoGames.add(new VideoGame(
+                "GTA 5",
+                "Acción / Aventura",
+                29.99,
+                "Rockstar Games",
+                4.8,
+                "Cuando un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se ven envueltos con lo peor y más desquiciado del mundo criminal, " +
+                        "el gobierno de los EE. UU. y la industria del entretenimiento, deben llevar a cabo una serie de peligrosos atracos para sobrevivir " +
+                        "en una ciudad implacable en la que no pueden confiar en nadie, y mucho menos los unos en los otros.",
+                R.drawable.gta5,
+                gta5Images
+        ));
+
         return videoGames;
     }
 }
