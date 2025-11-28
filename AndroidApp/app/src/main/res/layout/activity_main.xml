@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Layout: activity_main.xml
+    Actividad: MainActivity
+    Descripción: Pantalla de bienvenida de GAMR (Landing Screen).
+    Contiene:
+      - Imagen de fondo a pantalla completa.
+      - Contenedor principal con logo, subtítulo y botones de acción.
+      - Botón de registro y botón de inicio de sesión.
+-->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <!-- Fondo general -->
+    <!-- Imagen de fondo principal -->
     <ImageView
         android:id="@+id/bgImage"
         android:layout_width="match_parent"
@@ -14,14 +25,14 @@
         android:scaleType="centerCrop"
         android:src="@drawable/landing_bg" />
 
-    <!-- Contenido -->
+    <!-- Contenedor principal con distribución responsiva -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="24dp">
 
-        <!-- Logo -->
+        <!-- Logo principal -->
         <ImageView
             android:id="@+id/ivLogo"
             android:layout_width="229dp"
@@ -33,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="93dp"/>
 
-        <!-- Subtítulo -->
+        <!-- Subtítulo descriptivo -->
         <TextView
             android:id="@+id/subtitle_text"
             android:layout_width="0dp"
@@ -47,7 +58,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="24dp" />
 
-        <!-- Botón Registrarse idéntico al original -->
+        <!-- Botón de registro -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bRegister"
             style="@style/GameButton.Orange"
@@ -59,7 +70,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Botón Iniciar sesión igual al original -->
+        <!-- Botón de inicio de sesión -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bLogin"
             style="@style/GameButton.Black"

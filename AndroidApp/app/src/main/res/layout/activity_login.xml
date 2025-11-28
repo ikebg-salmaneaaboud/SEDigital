@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Layout: activity_login.xml
+    Actividad: LoginActivity
+    Descripción: Pantalla de inicio de sesión de la app GAMR.
+    Contiene:
+      - Imagen de fondo
+      - Título y subtítulo
+      - Campos de email y contraseña
+      - Botón de inicio de sesión
+      - Enlace para registrarse como nuevo usuario
+-->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.auth.LoginActivity">
 
-    <!-- Fondo original (imagen) -->
+    <!-- Imagen de fondo -->
     <ImageView
         android:id="@+id/bgImage"
         android:layout_width="match_parent"
@@ -13,6 +26,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/bg_1"/>
 
+    <!-- Contenedor principal con scroll para dispositivos pequeños -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,7 +39,7 @@
             android:padding="32dp"
             android:gravity="center_horizontal">
 
-            <!-- Título -->
+            <!-- Título principal -->
             <TextView
                 android:id="@+id/login_title"
                 android:layout_width="wrap_content"
@@ -36,7 +50,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="80dp"/>
 
-            <!-- Subtítulo -->
+            <!-- Subtítulo descriptivo -->
             <TextView
                 android:id="@+id/login_subtitle"
                 android:layout_width="wrap_content"
@@ -46,7 +60,7 @@
                 android:textSize="14sp"
                 android:layout_marginTop="4dp"/>
 
-            <!-- Email -->
+            <!-- Campo de Email -->
             <EditText
                 android:id="@+id/etEmail"
                 style="@style/InputField"
@@ -55,7 +69,7 @@
                 android:hint="@string/email_hint"
                 android:inputType="textEmailAddress"/>
 
-            <!-- Password -->
+            <!-- Campo de Password -->
             <EditText
                 android:id="@+id/etPassword"
                 style="@style/InputField"
@@ -64,7 +78,7 @@
                 android:hint="@string/password_hint"
                 android:inputType="textPassword" />
 
-            <!-- Botón Entrar -->
+            <!-- Botón de inicio de sesión -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnConfirmLogin"
                 style="@style/GameButton.Orange"
@@ -72,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:text="@string/login_enter_button" />
 
-            <!-- Nuevo usuario + Registrarse -->
+            <!-- Sección de nuevo usuario con enlace a registro -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,6 +94,7 @@
                 android:gravity="center"
                 android:layout_marginTop="16dp">
 
+                <!-- Texto informativo "¿Nuevo usuario?" -->
                 <TextView
                     android:id="@+id/tvNewUser"
                     android:layout_width="wrap_content"
@@ -88,6 +103,7 @@
                     android:textSize="14sp"
                     android:textColor="@color/text_primary" />
 
+                <!-- Enlace de registro -->
                 <TextView
                     android:id="@+id/tvRegister"
                     android:layout_width="wrap_content"

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Layout: activity_favorites.xml
+    Actividad: FavoritesActivity
+    Descripción: Layout principal de la pantalla de favoritos.
+    Contiene un encabezado común con carrito de compras y la navegación inferior.
+    No contiene contenido dinámico propio, ya que la lista de favoritos se implementa por código.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
@@ -8,6 +17,7 @@
     android:background="@drawable/vertical_gradient"
     tools:context=".ui.favorites.FavoritesActivity">
 
+    <!-- Encabezado común de la app, incluye el logo y el icono del carrito -->
     <include
         android:id="@+id/main_header"
         layout="@layout/header_with_cart"
@@ -17,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Barra de navegación inferior -->
     <include
         layout="@layout/view_bottom_nav"
         android:layout_width="0dp"

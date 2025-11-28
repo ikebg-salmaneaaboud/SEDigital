@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout: view_bottom_nav.xml
+    Descripción: Barra de navegación inferior global para la app.
+    Componentes:
+      - BottomNavigationView: contiene los íconos y textos de navegación.
+        - app:menu: referencia al menú definido en res/menu/bottom_nav_menu.xml.
+        - app:itemIconTint y app:itemTextColor: selector de colores para estados activo/inactivo.
+        - Altura fija de 75dp y fondo negro.
+    Uso: Se incluye en actividades principales (Home, Catalog, Profile, Favorites).
+-->
 <com.google.android.material.bottomnavigation.BottomNavigationView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"

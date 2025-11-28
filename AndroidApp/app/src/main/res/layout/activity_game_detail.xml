@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Layout: activity_game_detail.xml
+    Actividad: GameDetailActivity
+    Descripción: Pantalla de detalle de un juego.
+    Muestra información completa del juego seleccionado, incluyendo:
+      - Encabezado con botón de retorno
+      - Carrusel de imágenes del juego
+      - Título, desarrollador y rating
+      - Descripción del juego
+      - Botones de acción (Añadir al carrito / Comprar ahora)
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:fitsSystemWindows="true"
@@ -8,6 +21,7 @@
     android:background="@drawable/vertical_gradient"
     tools:context=".ui.gamedetail.GameDetailActivity">
 
+    <!-- Encabezado con botón de retorno a la pantalla anterior -->
     <include
         android:id="@+id/main_header"
         layout="@layout/header_with_return"
@@ -17,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- ScrollView que contiene todo el contenido principal del juego -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -32,9 +47,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- El contenido dinámico como el título, desarrollador, rating y descripción
-                 está correctamente usando tools:text, por lo que no se necesita cambiar. -->
-
+            <!-- Carrusel de imágenes del juego -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -51,6 +64,7 @@
                     app:iss_period="3000" />
             </androidx.cardview.widget.CardView>
 
+            <!-- Sección de título, desarrollador y rating -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,6 +72,7 @@
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical">
 
+                <!-- Información del juego: título y desarrollador -->
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -84,6 +99,7 @@
                         tools:text="ROCKSTAR GAMES" />
                 </LinearLayout>
 
+                <!-- Contenedor del rating -->
                 <LinearLayout
                     android:id="@+id/rating_container"
                     android:layout_width="wrap_content"
@@ -110,6 +126,7 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- Descripción del juego -->
             <TextView
                 android:id="@+id/tvGameDescription"
                 android:layout_width="match_parent"
@@ -124,6 +141,7 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Contenedor inferior con botones de acción -->
     <LinearLayout
         android:id="@+id/bottom_buttons_container"
         android:layout_width="0dp"
@@ -135,6 +153,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Botón para añadir al carrito -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddToCart"
             style="@style/GameButton.Orange"
@@ -146,6 +165,7 @@
             android:textAllCaps="false"
             android:textSize="16sp" />
 
+        <!-- Botón para comprar inmediatamente -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBuy"
             style="@style/GameButton.Black"

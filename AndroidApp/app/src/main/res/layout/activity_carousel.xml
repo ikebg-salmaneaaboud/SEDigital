@@ -1,32 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout: activity_carousel.xml
+    Descripción: Pantalla principal de un carrusel de imágenes destacado.
+    Estructura:
+      - RelativeLayout raíz con fondo de degradado vertical.
+      - CardView central que contiene el slider de imágenes:
+          - Esquinas redondeadas y elevación para efecto de sombra.
+          - ImageSlider de Denzcoskun para mostrar imágenes de forma automática.
+    Propiedades del ImageSlider:
+      - Cambio automático de imágenes cada 3 segundos.
+      - Retardo inicial de 1 segundo antes del ciclo.
+      - Esquinas redondeadas para integrarse visualmente con la CardView.
+-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/vertical_gradient">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:cardBackgroundColor="@color/app_background"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/app_background"
         app:cardElevation="20dp"
-        app:cardCornerRadius="20dp"
-        >
+        app:cardCornerRadius="20dp">
 
         <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/imageSlider"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/imageSlider"
             app:iss_period="3000"
             app:iss_auto_cycle="true"
             app:iss_delay="1000"
-            app:iss_corner_radius="20"
-            >
-
-        </com.denzcoskun.imageslider.ImageSlider>
+            app:iss_corner_radius="20" />
 
     </androidx.cardview.widget.CardView>
 

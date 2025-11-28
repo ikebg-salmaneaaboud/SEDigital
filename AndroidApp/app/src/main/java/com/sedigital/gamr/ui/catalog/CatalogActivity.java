@@ -1,7 +1,7 @@
 package com.sedigital.gamr.ui.catalog;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +9,11 @@ import com.sedigital.gamr.R;
 import com.sedigital.gamr.data.mock.VideoGameProvider;
 import com.sedigital.gamr.ui.BaseActivity;
 
+/**
+ * Pantalla del catálogo de juegos.
+ * Muestra los juegos en un RecyclerView con GridLayout de 2 columnas.
+ * Incluye la barra de navegación inferior mediante BaseActivity.
+ */
 public class CatalogActivity extends BaseActivity {
 
     private VideoGameProvider videoGameProvider;
@@ -17,7 +22,9 @@ public class CatalogActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
+
         videoGameProvider = new VideoGameProvider();
+
         setupBottomNav(R.id.games);
         initRecyclerView();
     }

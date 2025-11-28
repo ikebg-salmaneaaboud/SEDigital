@@ -13,6 +13,11 @@ import com.sedigital.gamr.R;
 
 import java.util.ArrayList;
 
+/**
+ * Muestra los detalles de un juego seleccionado:
+ * - Slider de imágenes
+ * - Título, desarrollador, rating y descripción
+ */
 public class GameDetailActivity extends AppCompatActivity {
 
     @Override
@@ -21,7 +26,7 @@ public class GameDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_detail);
 
         ImageView btnReturn = findViewById(R.id.header_return_icon);
-        btnReturn.setOnClickListener(view -> getOnBackPressedDispatcher().onBackPressed());
+        btnReturn.setOnClickListener(view -> onBackPressed());
 
         TextView tvTitle = findViewById(R.id.tvGameTitle);
         TextView tvDeveloper = findViewById(R.id.tvDeveloper);
@@ -43,5 +48,4 @@ public class GameDetailActivity extends AppCompatActivity {
         }
         imageSlider.setImageList(slideModels, ScaleTypes.FIT);
     }
-
 }

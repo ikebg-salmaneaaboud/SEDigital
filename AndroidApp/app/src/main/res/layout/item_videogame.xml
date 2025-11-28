@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Layout: item_videogame.xml
+    Descripción: Plantilla para mostrar un videojuego en un RecyclerView o GridLayout.
+    Componentes:
+      - ivVideoGame: Imagen del videojuego, mantiene proporción 1:1.
+      - tvVideoGameCategory: Categoría o género del juego.
+      - tvVideoGameTitle: Título del juego, una sola línea con truncado si es largo.
+      - tvVideoGamePrice: Precio del juego.
+    Uso: Se usa en listas de catálogo, favoritos o destacados.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
 
+    <!-- Imagen del videojuego (proporción cuadrada) -->
     <ImageView
         android:id="@+id/ivVideoGame"
         android:layout_width="0dp"
@@ -17,6 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/rdr2" />
 
+    <!-- Categoría del videojuego -->
     <TextView
         android:id="@+id/tvVideoGameCategory"
         android:layout_width="0dp"
@@ -31,6 +45,7 @@
         android:layout_marginTop="4dp"
         tools:text="Acción" />
 
+    <!-- Título del videojuego -->
     <TextView
         android:id="@+id/tvVideoGameTitle"
         android:layout_width="0dp"
@@ -43,11 +58,11 @@
         android:textAppearance="?attr/textAppearanceHeadline6"
         android:textColor="@color/text_primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvVideoGameCategory"
         tools:text="Red Dead Redemption II" />
 
+    <!-- Precio del videojuego -->
     <TextView
         android:id="@+id/tvVideoGamePrice"
         android:layout_width="0dp"

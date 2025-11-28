@@ -11,8 +11,13 @@ import com.sedigital.gamr.data.model.VideoGame;
 
 import java.util.ArrayList;
 
+/**
+ * Adapter del RecyclerView del catálogo.
+ * Se encarga de mostrar los VideoGame en la grilla definida en CatalogActivity.
+ */
 public class CatalogGameAdapter extends RecyclerView.Adapter<CatalogGameViewHolder> {
-    private ArrayList<VideoGame> videoGames;
+
+    private final ArrayList<VideoGame> videoGames;
 
     public CatalogGameAdapter(ArrayList<VideoGame> videoGames) {
         this.videoGames = videoGames;
