@@ -7,7 +7,7 @@
                 android:centerColor="#FF9800"
                 android:endColor="#FB8C00"
                 android:angle="45"/>
-            <corners android:radius="10dp"/>
+            <corners android:radius="14dp"/>
         </shape>
     </item>
 
