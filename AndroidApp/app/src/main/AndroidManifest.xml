@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.cart.CartActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false" />
         <activity
@@ -24,18 +27,16 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.RegisterActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".ui.gamedetail.GameDetailActivity"
-            android:exported="true">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ui.catalog.CatalogActivity"
-            android:exported="true">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

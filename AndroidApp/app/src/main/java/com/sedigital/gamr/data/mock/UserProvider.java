@@ -10,7 +10,7 @@ public class UserProvider {
     public List<User> getUsers() {
         List<User> users = new ArrayList<>();
 
-        users.add(new User("test@example.com", "123456", "Test User"));
+        users.add(new User("test", "123", "Test User"));
         users.add(new User("admin@example.com", "admin123", "Admin"));
         users.add(new User("player@example.com", "playerpass", "Player One"));
 

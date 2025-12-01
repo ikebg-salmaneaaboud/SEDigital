@@ -16,14 +16,14 @@ import com.sedigital.gamr.ui.gamedetail.GameDetailActivity;
  * Maneja la visualización de título, categoría, precio e imagen de portada.
  * También gestiona la navegación hacia GameDetailActivity al hacer clic.
  */
-public class CatalogGameViewHolder extends RecyclerView.ViewHolder {
+public class CatalogViewHolder extends RecyclerView.ViewHolder {
 
     private final TextView tvVideoGameTitle;
     private final TextView tvVideoGameCategory;
     private final TextView tvVideoGamePrice;
     private final ImageView ivVideoGameCover;
 
-    public CatalogGameViewHolder(View view) {
+    public CatalogViewHolder(View view) {
         super(view);
         tvVideoGameTitle = view.findViewById(R.id.tvVideoGameTitle);
         tvVideoGameCategory = view.findViewById(R.id.tvVideoGameCategory);

@@ -1,6 +1,8 @@
 package com.sedigital.gamr.ui.catalog;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sedigital.gamr.R;
 import com.sedigital.gamr.data.mock.VideoGameProvider;
 import com.sedigital.gamr.ui.BaseActivity;
+import com.sedigital.gamr.ui.cart.CartActivity;
+import com.sedigital.gamr.ui.gamedetail.GameDetailActivity;
 
 /**
  * Pantalla del catálogo de juegos.
@@ -23,8 +27,13 @@ public class CatalogActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
 
-        videoGameProvider = new VideoGameProvider();
+        ImageView btnCart = findViewById(R.id.header_cart_icon);
+        btnCart.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CartActivity.class);
+            startActivity(intent);
+        });
 
+        videoGameProvider = new VideoGameProvider();
         setupBottomNav(R.id.games);
         initRecyclerView();
     }
@@ -32,6 +41,6 @@ public class CatalogActivity extends BaseActivity {
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerGames);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        recyclerView.setAdapter(new CatalogGameAdapter(videoGameProvider.getVideoGames()));
+        recyclerView.setAdapter(new CatalogAdapter(videoGameProvider.getVideoGames()));
     }
 }

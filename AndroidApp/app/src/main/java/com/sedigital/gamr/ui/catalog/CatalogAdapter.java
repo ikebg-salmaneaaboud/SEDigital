@@ -15,23 +15,23 @@ import java.util.ArrayList;
  * Adapter del RecyclerView del catálogo.
  * Se encarga de mostrar los VideoGame en la grilla definida en CatalogActivity.
  */
-public class CatalogGameAdapter extends RecyclerView.Adapter<CatalogGameViewHolder> {
+public class CatalogAdapter extends RecyclerView.Adapter<CatalogViewHolder> {
 
     private final ArrayList<VideoGame> videoGames;
 
-    public CatalogGameAdapter(ArrayList<VideoGame> videoGames) {
+    public CatalogAdapter(ArrayList<VideoGame> videoGames) {
         this.videoGames = videoGames;
     }
 
     @NonNull
     @Override
-    public CatalogGameViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CatalogViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        return new CatalogGameViewHolder(layoutInflater.inflate(R.layout.item_videogame, parent, false));
+        return new CatalogViewHolder(layoutInflater.inflate(R.layout.item_videogame, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CatalogGameViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CatalogViewHolder holder, int position) {
         VideoGame videoGame = videoGames.get(position);
         holder.render(videoGame);
     }
