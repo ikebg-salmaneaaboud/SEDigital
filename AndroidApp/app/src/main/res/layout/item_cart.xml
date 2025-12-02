@@ -88,6 +88,16 @@
             app:layout_constraintTop_toBottomOf="@+id/ivPlatform"
             tools:text="55.99€" />
 
+        <ImageView
+            android:id="@+id/ivRemoveCartItem"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/text_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvVideoGamePrice"
+            app:layout_constraintBottom_toBottomOf="@+id/tvVideoGamePrice" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@ package com.sedigital.backupapp.repository;
 
 import com.sedigital.backupapp.config.DBConnector;
 import com.sedigital.backupapp.model.Plataforma;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,23 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Repositorio para acceder a las plataformas de videojuegos en la base de datos.
+ * Repositorio para acceder a los datos de la tabla "plataformas".
+ * <p>
+ * Extiende {@link BaseRepository} para reutilizar la gestión del conector
+ * a la base de datos y el nombre de la tabla. Implementa el método
+ * {@link #findAll()} para obtener todos los registros de plataformas
+ * y mapearlos a objetos {@link Plataforma}.
  */
-public class PlataformaRepository {
-
-    private final DBConnector dbConnector;
+public class PlataformaRepository extends BaseRepository<Plataforma> {
 
     /**
-     * Constructor que recibe un conector a la base de datos.
+     * Constructor que inicializa el repositorio con el conector a la base de datos.
+     *
+     * @param dbConnector Conector a la base de datos.
      */
     public PlataformaRepository(DBConnector dbConnector) {
-        this.dbConnector = dbConnector;
+        super(dbConnector, "plataformas");
     }
 
     /**
-     * Obtiene todas las plataformas de la base de datos.
-     * @return Lista de objetos Plataforma.
+     * Obtiene todos los registros de la tabla "plataformas".
+     * <p>
+     * Cada fila se convierte en un objeto {@link Plataforma} con sus campos correspondientes.
+     *
+     * @return Lista de objetos {@link Plataforma} que representan los registros de la tabla.
      */
+    @Override
     public List<Plataforma> findAll() {
         List<Plataforma> plataformas = new ArrayList<>();
         String sql = "SELECT * FROM plataformas";
@@ -35,11 +43,10 @@ public class PlataformaRepository {
              ResultSet rs = st.executeQuery(sql)) {
 
             while (rs.next()) {
-                Plataforma p = new Plataforma(
+                plataformas.add(new Plataforma(
                         rs.getInt("id_plataforma"),
                         rs.getString("nombre")
-                );
-                plataformas.add(p);
+                ));
             }
 
         } catch (SQLException e) {

@@ -1,53 +1,49 @@
 package com.sedigital.backupapp.service;
 
-import com.sedigital.backupapp.model.Plataforma;
-import com.sedigital.backupapp.model.Proveedor;
-import com.sedigital.backupapp.model.Videojuego;
-import com.sedigital.backupapp.repository.PlataformaRepository;
-import com.sedigital.backupapp.repository.ProveedorRepository;
-import com.sedigital.backupapp.repository.VideojuegoRepository;
+import com.sedigital.backupapp.repository.BaseRepository;
 import com.sedigital.backupapp.xml.XMLExporter;
 
+import java.io.File;
 import java.util.List;
 
 /**
- * Servicio que centraliza la exportación de todas las tablas a XML.
- * No utiliza generics ni lógica complicada, para mantenerlo legible.
+ * Servicio que exporta los datos de múltiples repositorios a archivos XML.
+ * <p>
+ * Permite manejar cualquier repositorio que implemente {@link BaseRepository}
+ * de manera genérica, creando un archivo XML por cada tabla.
  */
 public class ExportService {
 
+    /** Componente que realiza la generación de archivos XML. */
     private final XMLExporter exporter;
-    private final VideojuegoRepository videojuegoRepo;
-    private final ProveedorRepository proveedorRepo;
-    private final PlataformaRepository plataformaRepo;
+
+    /** Lista de repositorios cuyas tablas se van a exportar. */
+    private final List<BaseRepository<?>> repositorios;
 
     /**
-     * Constructor que recibe el exportador y los repositorios.
+     * Inicializa el servicio con el exportador y la lista de repositorios.
      *
-     * @param exporter        Instancia de XMLExporter.
-     * @param videojuegoRepo  Repositorio de Videojuego.
-     * @param proveedorRepo   Repositorio de Proveedor.
-     * @param plataformaRepo  Repositorio de Plataforma.
+     * @param exporter     Exportador XML.
+     * @param repositorios Repositorios a exportar.
      */
-    public ExportService(XMLExporter exporter,
-                         VideojuegoRepository videojuegoRepo,
-                         ProveedorRepository proveedorRepo,
-                         PlataformaRepository plataformaRepo) {
+    public ExportService(XMLExporter exporter, List<BaseRepository<?>> repositorios) {
         this.exporter = exporter;
-        this.videojuegoRepo = videojuegoRepo;
-        this.proveedorRepo = proveedorRepo;
-        this.plataformaRepo = plataformaRepo;
+        this.repositorios = repositorios;
     }
 
     /**
-     * Exporta todas las tablas a archivos XML en la ruta indicada.
-     * Cada tabla se exporta con un archivo separado.
+     * Exporta todas las tablas de los repositorios a XML en el directorio indicado.
+     * <p>
+     * Cada repositorio genera un archivo separado con el nombre de su tabla.
      *
-     * @param outputDir Directorio donde se guardarán los XML.
+     * @param outputDir Ruta del directorio donde se guardarán los XML.
      */
     public void exportarTodos(String outputDir) {
-        exporter.exportarTabla("videojuegos", videojuegoRepo.findAll(), outputDir + "/videojuegos.xml");
-        exporter.exportarTabla("proveedores", proveedorRepo.findAll(), outputDir + "/proveedores.xml");
-        exporter.exportarTabla("plataformas", plataformaRepo.findAll(), outputDir + "/plataformas.xml");
+        for (BaseRepository<?> repo : repositorios) {
+            String path = outputDir + "/" + repo.getNombreTabla() + ".xml";
+            File file = new File(path);
+            file.getParentFile().mkdirs();
+            exporter.exportarTabla(repo.getNombreTabla(), repo.findAll(), path);
+        }
     }
 }

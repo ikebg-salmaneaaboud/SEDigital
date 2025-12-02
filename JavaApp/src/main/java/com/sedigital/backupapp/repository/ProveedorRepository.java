@@ -2,7 +2,6 @@ package com.sedigital.backupapp.repository;
 
 import com.sedigital.backupapp.config.DBConnector;
 import com.sedigital.backupapp.model.Proveedor;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,23 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Repositorio para acceder a los proveedores en la base de datos.
+ * Repositorio para acceder a los datos de la tabla "proveedores".
+ * <p>
+ * Extiende {@link BaseRepository} para reutilizar la gestión del conector
+ * a la base de datos y el nombre de la tabla. Implementa el método
+ * {@link #findAll()} para obtener todos los registros de proveedores
+ * y mapearlos a objetos {@link Proveedor}.
  */
-public class ProveedorRepository {
-
-    private final DBConnector dbConnector;
+public class ProveedorRepository extends BaseRepository<Proveedor> {
 
     /**
-     * Constructor que recibe un conector a la base de datos.
+     * Constructor que inicializa el repositorio con el conector a la base de datos.
+     *
+     * @param dbConnector Conector a la base de datos.
      */
     public ProveedorRepository(DBConnector dbConnector) {
-        this.dbConnector = dbConnector;
+        super(dbConnector, "proveedores");
     }
 
     /**
-     * Obtiene todos los proveedores de la base de datos.
-     * @return Lista de objetos Proveedor.
+     * Obtiene todos los registros de la tabla "proveedores".
+     * <p>
+     * Cada fila se convierte en un objeto {@link Proveedor} con sus campos correspondientes.
+     *
+     * @return Lista de objetos {@link Proveedor} que representan los registros de la tabla.
      */
+    @Override
     public List<Proveedor> findAll() {
         List<Proveedor> proveedores = new ArrayList<>();
         String sql = "SELECT * FROM proveedores";
@@ -35,13 +43,12 @@ public class ProveedorRepository {
              ResultSet rs = st.executeQuery(sql)) {
 
             while (rs.next()) {
-                Proveedor p = new Proveedor(
+                proveedores.add(new Proveedor(
                         rs.getInt("id_proveedor"),
                         rs.getString("nombre"),
                         rs.getString("email"),
                         rs.getInt("telefono")
-                );
-                proveedores.add(p);
+                ));
             }
 
         } catch (SQLException e) {

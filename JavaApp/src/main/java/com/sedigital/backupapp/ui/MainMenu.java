@@ -49,9 +49,9 @@ public class MainMenu {
             opcion = mostrarOpcionesYLeerSeleccion("Menú Principal", opciones);
 
             switch (opcion) {
-                case 1 -> consultaService.mostrarVideojuegos();
-                case 2 -> consultaService.mostrarProveedores();
-                case 3 -> consultaService.mostrarPlataformas();
+                case 1 -> consultaService.mostrarTabla("videojuegos");
+                case 2 -> consultaService.mostrarTabla("proveedores");
+                case 3 -> consultaService.mostrarTabla("plataformas");
                 case 4 -> ejecutarExportacion();
                 case 5 -> System.out.println("Saliendo...");
                 default -> System.out.println("Opción no válida.");

@@ -20,6 +20,7 @@ public class CartViewHolder extends RecyclerView.ViewHolder {
     private final TextView tvVideoGameCategory;
     private final ImageView ivPlatform;
     private final TextView tvVideoGamePrice;
+    private final ImageView ivRemoveCartItem;
 
     public CartViewHolder(View view) {
         super(view);
@@ -28,6 +29,7 @@ public class CartViewHolder extends RecyclerView.ViewHolder {
         tvVideoGameCategory = view.findViewById(R.id.tvVideoGameCategory);
         ivPlatform = view.findViewById(R.id.ivPlatform);
         tvVideoGamePrice = view.findViewById(R.id.tvVideoGamePrice);
+        ivRemoveCartItem = view.findViewById(R.id.ivRemoveCartItem);
     }
 
     public void render(CartItem cartItem) {
@@ -36,5 +38,6 @@ public class CartViewHolder extends RecyclerView.ViewHolder {
         tvVideoGameCategory.setText(cartItem.getVideoGame().getCategory());
         ivPlatform.setImageResource(cartItem.getPlatform());
         tvVideoGamePrice.setText(itemView.getContext().getString(R.string.price_format_euro, cartItem.getVideoGame().getPrice()));
+        ivRemoveCartItem.setOnClickListener(v -> {});
     }
 }

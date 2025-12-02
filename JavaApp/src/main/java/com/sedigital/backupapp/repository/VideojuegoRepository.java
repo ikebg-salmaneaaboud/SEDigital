@@ -2,7 +2,6 @@ package com.sedigital.backupapp.repository;
 
 import com.sedigital.backupapp.config.DBConnector;
 import com.sedigital.backupapp.model.Videojuego;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,24 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Repositorio para acceder a los videojuegos en la base de datos.
- * Se encarga de obtener todos los registros de la tabla "videojuegos".
+ * Repositorio para acceder a los datos de la tabla "videojuegos".
+ * <p>
+ * Extiende {@link BaseRepository} para reutilizar la gestión del conector
+ * a la base de datos y el nombre de la tabla. Implementa el método
+ * {@link #findAll()} para obtener todos los registros de videojuegos
+ * y mapearlos a objetos {@link Videojuego}.
  */
-public class VideojuegoRepository {
-
-    private final DBConnector dbConnector;
+public class VideojuegoRepository extends BaseRepository<Videojuego> {
 
     /**
-     * Constructor que recibe un conector a la base de datos.
+     * Constructor que inicializa el repositorio con el conector a la base de datos.
+     *
+     * @param dbConnector Conector a la base de datos.
      */
     public VideojuegoRepository(DBConnector dbConnector) {
-        this.dbConnector = dbConnector;
+        super(dbConnector, "videojuegos");
     }
 
     /**
-     * Obtiene todos los videojuegos de la base de datos.
-     * @return Lista de objetos Videojuego.
+     * Obtiene todos los registros de la tabla "videojuegos".
+     * <p>
+     * Cada fila se convierte en un objeto {@link Videojuego} con sus campos correspondientes:
+     *
+     * @return Lista de objetos {@link Videojuego} que representan los registros de la tabla.
      */
+    @Override
     public List<Videojuego> findAll() {
         List<Videojuego> data = new ArrayList<>();
         String sql = "SELECT * FROM videojuegos";
@@ -36,7 +43,7 @@ public class VideojuegoRepository {
              ResultSet rs = st.executeQuery(sql)) {
 
             while (rs.next()) {
-                Videojuego v = new Videojuego(
+                data.add(new Videojuego(
                         rs.getInt("id_videojuego"),
                         rs.getInt("unidad"),
                         rs.getString("titulo"),
@@ -46,8 +53,7 @@ public class VideojuegoRepository {
                         rs.getString("clasificacion"),
                         rs.getDate("fecha_lanzamiento"),
                         rs.getInt("id_proveedor")
-                );
-                data.add(v);
+                ));
             }
 
         } catch (SQLException e) {
