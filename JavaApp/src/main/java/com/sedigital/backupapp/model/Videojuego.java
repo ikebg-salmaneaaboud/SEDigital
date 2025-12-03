@@ -7,7 +7,7 @@ import java.sql.Date;
  * Contiene información básica como título, precio, clasificación y proveedor.
  */
 public class Videojuego {
-    private int id_videojuego;
+    private int id;
     private int unidad;
     private String titulo;
     private String descripcion;
@@ -20,8 +20,8 @@ public class Videojuego {
     /**
      * Constructor completo de Videojuego.
      */
-    public Videojuego(int id_videojuego, int unidad, String titulo, String descripcion, float precio_base, int es_digital, String clasificacion, Date fecha_lanzamiento, int id_proveedor) {
-        this.id_videojuego = id_videojuego;
+    public Videojuego(int id, int unidad, String titulo, String descripcion, float precio_base, int es_digital, String clasificacion, Date fecha_lanzamiento, int id_proveedor) {
+        this.id = id;
         this.unidad = unidad;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -34,8 +34,8 @@ public class Videojuego {
 
     /** Getters y setters */
 
-    public int getId_videojuego() { return id_videojuego; }
-    public void setId_videojuego(int id_videojuego) { this.id_videojuego = id_videojuego; }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
     public int getUnidad() { return unidad; }
     public void setUnidad(int unidad) { this.unidad = unidad; }
     public String getTitulo() { return titulo; }
@@ -56,7 +56,7 @@ public class Videojuego {
     @Override
     public String toString() {
         return "Videojuego{" +
-                "id_videojuego=" + id_videojuego +
+                "id_videojuego=" + id +
                 ", unidad=" + unidad +
                 ", titulo='" + titulo + '\'' +
                 ", descripcion='" + descripcion + '\'' +

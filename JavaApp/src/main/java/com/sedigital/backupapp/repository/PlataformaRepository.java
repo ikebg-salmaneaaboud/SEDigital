@@ -44,7 +44,7 @@ public class PlataformaRepository extends BaseRepository<Plataforma> {
 
             while (rs.next()) {
                 plataformas.add(new Plataforma(
-                        rs.getInt("id_plataforma"),
+                        rs.getInt("id"),
                         rs.getString("nombre")
                 ));
             }

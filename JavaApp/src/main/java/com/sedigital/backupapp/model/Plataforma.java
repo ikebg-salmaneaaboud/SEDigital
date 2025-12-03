@@ -1,20 +1,20 @@
 package com.sedigital.backupapp.model;
 
 public class Plataforma {
-    private int id_plataforma;
+    private int id;
     private String nombre;
 
-    public Plataforma(int id_plataforma, String nombre) {
-        this.id_plataforma = id_plataforma;
+    public Plataforma(int id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
     }
 
-    public int getId_plataforma() {
-        return id_plataforma;
+    public int getId() {
+        return id;
     }
 
-    public void setId_plataforma(int id_plataforma) {
-        this.id_plataforma = id_plataforma;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -28,7 +28,7 @@ public class Plataforma {
     @Override
     public String toString() {
         return "Plataforma{" +
-                "id_plataforma=" + id_plataforma +
+                "id_plataforma=" + id +
                 ", nombre='" + nombre + '\'' +
                 '}';
     }

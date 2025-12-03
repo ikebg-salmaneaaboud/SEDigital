@@ -44,7 +44,7 @@ public class ProveedorRepository extends BaseRepository<Proveedor> {
 
             while (rs.next()) {
                 proveedores.add(new Proveedor(
-                        rs.getInt("id_proveedor"),
+                        rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("email"),
                         rs.getInt("telefono")

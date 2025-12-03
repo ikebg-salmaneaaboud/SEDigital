@@ -32,14 +32,28 @@ public class XMLExporter {
             for (T obj : data) {
                 Element item = doc.createElement("Registro");
 
+                try {
+                    Field idField = obj.getClass().getDeclaredField("id");
+                    idField.setAccessible(true);
+                    Object idValue = idField.get(obj);
+                    if (idValue != null) {
+                        item.setAttribute("id", idValue.toString());
+                    }
+                } catch (NoSuchFieldException ignored) {
+                }
+
                 for (Field field : obj.getClass().getDeclaredFields()) {
                     field.setAccessible(true);
                     String name = field.getName();
                     Object value = field.get(obj);
 
-                    Element fieldElement = doc.createElement(name);
-                    fieldElement.setTextContent(value != null ? value.toString() : "");
-                    item.appendChild(fieldElement);
+                    if ("id".equalsIgnoreCase(name)) {
+                        if (value != null) item.setAttribute("id", value.toString());
+                    } else {
+                        Element fieldElement = doc.createElement(name);
+                        fieldElement.setTextContent(value != null ? value.toString() : "");
+                        item.appendChild(fieldElement);
+                    }
                 }
 
                 root.appendChild(item);

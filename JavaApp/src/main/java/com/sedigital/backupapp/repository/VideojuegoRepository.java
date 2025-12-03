@@ -44,7 +44,7 @@ public class VideojuegoRepository extends BaseRepository<Videojuego> {
 
             while (rs.next()) {
                 data.add(new Videojuego(
-                        rs.getInt("id_videojuego"),
+                        rs.getInt("id"),
                         rs.getInt("unidad"),
                         rs.getString("titulo"),
                         rs.getString("descripcion"),
