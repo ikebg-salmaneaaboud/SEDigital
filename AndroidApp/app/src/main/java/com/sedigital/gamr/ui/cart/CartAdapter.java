@@ -28,9 +28,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        CartItem cartItem = cartAdapterArrayList.get(position);
-        holder.render(cartItem);
+        holder.render(cartAdapterArrayList, position, this);
     }
+
 
     @Override
     public int getItemCount() {

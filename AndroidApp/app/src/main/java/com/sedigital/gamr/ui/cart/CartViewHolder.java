@@ -12,6 +12,8 @@ import com.sedigital.gamr.data.model.CartItem;
 import com.sedigital.gamr.data.model.VideoGame;
 import com.sedigital.gamr.ui.gamedetail.GameDetailActivity;
 
+import java.util.ArrayList;
+
 
 public class CartViewHolder extends RecyclerView.ViewHolder {
 
@@ -32,12 +34,23 @@ public class CartViewHolder extends RecyclerView.ViewHolder {
         ivRemoveCartItem = view.findViewById(R.id.ivRemoveCartItem);
     }
 
-    public void render(CartItem cartItem) {
+    public void render(ArrayList<CartItem> list, int position, RecyclerView.Adapter adapter) {
+        CartItem cartItem = list.get(position);
+
         ivVideoGame.setImageResource(cartItem.getVideoGame().getCover());
         tvVideoGameTitle.setText(cartItem.getVideoGame().getTitle());
         tvVideoGameCategory.setText(cartItem.getVideoGame().getCategory());
         ivPlatform.setImageResource(cartItem.getPlatform());
-        tvVideoGamePrice.setText(itemView.getContext().getString(R.string.price_format_euro, cartItem.getVideoGame().getPrice()));
-        ivRemoveCartItem.setOnClickListener(v -> {});
+        tvVideoGamePrice.setText(itemView.getContext().getString(
+                R.string.price_format_euro, cartItem.getVideoGame().getPrice()));
+
+        ivRemoveCartItem.setOnClickListener(v -> {
+            int pos = getAdapterPosition();
+            if (pos != RecyclerView.NO_POSITION) {
+                list.remove(pos);
+                adapter.notifyItemRemoved(pos);
+            }
+        });
     }
+
 }

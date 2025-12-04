@@ -28,6 +28,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogOut"
+        style="@style/GameButton.Orange"
+        android:layout_width="261dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/logout_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_header" />
+
     <!-- Barra de navegación inferior -->
     <include
         layout="@layout/view_bottom_nav"

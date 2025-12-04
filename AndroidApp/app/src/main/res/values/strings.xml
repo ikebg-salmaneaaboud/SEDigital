@@ -32,6 +32,9 @@
     <string name="add_to_cart_button">Agregar al carrito</string>
     <string name="buy_now_button">Comprar ahora</string>
 
+    <!-- Cadenas para ProfileActivity -->
+    <string name="logout_button">Cerrar sesión</string>
+
     <!-- Cadenas para el header -->
     <string name="content_description_cart">Carrito de compras</string>
     <string name="content_description_app_logo">Logo de la app</string>
