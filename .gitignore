@@ -1,0 +1,12 @@
+# Maven build output
+JavaApp/target/
+
+# Configuración sensible
+JavaApp/config.properties
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+*.iml

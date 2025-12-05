@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plataformas>
+  <Registro id="1">
+    <nombre>Playstation</nombre>
+  </Registro>
+  <Registro id="2">
+    <nombre>Xbox</nombre>
+  </Registro>
+  <Registro id="3">
+    <nombre>Windows</nombre>
+  </Registro>
+</plataformas>

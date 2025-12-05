@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout: activity_main.xml
+    Actividad: MainActivity
+    Descripción: Pantalla de bienvenida de GAMR (Landing Screen).
+    Contiene:
+      - Imagen de fondo a pantalla completa.
+      - Contenedor principal con logo, subtítulo y botones de acción.
+      - Botón de registro y botón de inicio de sesión.
+-->
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <!-- Imagen de fondo principal -->
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/landing_bg" />
+
+    <!-- Contenedor principal con distribución responsiva -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+
+        <!-- Logo principal -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="229dp"
+            android:layout_height="104dp"
+            android:src="@drawable/logo"
+            android:adjustViewBounds="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="93dp"/>
+
+        <!-- Subtítulo descriptivo -->
+        <TextView
+            android:id="@+id/subtitle_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_text"
+            android:textAlignment="center"
+            android:textColor="#B6B6B6"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <!-- Botón de registro -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bRegister"
+            style="@style/GameButton.Orange"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
+            android:text="@string/register_button_text"
+            android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitle_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón de inicio de sesión -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bLogin"
+            style="@style/GameButton.Black"
+            android:layout_width="260dp"
+            android:layout_height="48dp"
+            android:text="@string/login_button_text"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@id/bRegister"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
